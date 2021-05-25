@@ -3,8 +3,10 @@
 
 using namespace std;
 
-string item_list[] = {
-    "item1", "FLAG", "item1",
+string item_list[3][3] = {
+    {"1", "apple", " 100",},
+    {"2", "FLAG", "50000",},
+    {"3", "orange", "200",},
 };
 
 inline void end() {
@@ -19,29 +21,45 @@ int buy(int item) {
     cin >> kazu;
 
     sum = item * kazu;
+    cout << sum << "円使いました\n\n";
     return sum;
 }
 
 int main()
 {
-    cout << "------------------------------\n";
-    cout << "|" << item_list[0] << "|"
-         << "|" << item_list[1] << "|"
-         << "|" << item_list[2] << "|\n";
-    cout << "------------------------------\n";
-
     int depo = 5000;
     int num = 1;
 
     while (num != 0)
     {
+
+        cout << "--------------------\n";
+        for (int i = 0; i < 3; i++)
+        {
+                cout << "|" << item_list[i][0] << "  " << item_list[i][1] << "  " << item_list[i][2] << " 円 |\n";
+        }
+        cout << "--------------------\n";
+
         cout << "財布：" << depo << "\n";
-        cout << "数値を入力（0:終了, 1:購入）\n";
+        cout << "どれを買いますか？（番号を選択、0で終了）\n";
         cin >> num;
 
         switch (num)
         {
             case 1:
+                depo -= buy(100);
+                cout << "残高は" << depo << "\n\n";
+                break;
+            case 2:
+                if (depo < 50000)
+                {
+                    cout << "お金が足りません！\n\n";
+                } else {
+                    depo -= 50000;
+                    cout << "Thanks!\n" << "DHCTF{lNEkn_nakna_RqpJs}\n";
+                }
+                break;
+            case 3:
                 depo -= buy(200);
                 cout << "残高は" << depo << "\n\n";
                 break;
