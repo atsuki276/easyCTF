@@ -7,6 +7,7 @@ int main()
 {
 	Date today;
 
-	cout << today;
+	cout << today << "\n";
+	cout << today.day_of_week() << "\n"; 
 	
 }

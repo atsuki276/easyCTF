@@ -45,6 +45,18 @@ Date Date::preceding_day() const
 	return temp;
 }
 
+int Date::day_of_week() const
+{
+	int yy = y;
+	int mm = m;
+	if (mm == 1 || mm == 2)
+	{
+		yy--;
+		mm += 12;
+	}
+	return (yy + yy / 4 -yy / 100 + yy / 400 + (13 * mm + 8) / 5 + d) % 7;
+}
+
 //•¶Žš—ñ•\Œ»‚ð•Ô‹p
 string Date::to_string() const
 {

@@ -1,3 +1,6 @@
+#ifndef ___Class_Date
+#define ___Class_Date
+
 #include <iostream>
 #include <string>
 
@@ -17,8 +20,12 @@ public:
 
 	Date preceding_day() const;			//前日の日付を返却
 
+	int day_of_week() const;
+
 	std::string to_string() const;		//文字列表現を返却
 };
 
 std::ostream& operator<<(std::ostream& s, const Date& x);	//挿入子
 std::istream& operator>>(std::istream& s, Date& x);			//抽出子
+
+#endif
