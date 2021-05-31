@@ -24,8 +24,8 @@ int main()
             continue;
         }
 
+        //4•¶š‘O‚É–ß‚µ‚Äo—Í
         flag[i] -= 4;
-
         cout << flag[i];
         
     }
