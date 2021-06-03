@@ -1,0 +1,1 @@
+DHCTF{aaaa_bbb_cccc}
