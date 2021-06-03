@@ -20,7 +20,7 @@ private:
 
     void cipher(char* dst) {
         char cipherBlockTemp[Block];
-        memset(cipherBlockTemp, 'I', Block);
+        memset(cipherBlockTemp, 'S', Block);
 
         for (int i = 0; i < Block; i++)
         {
@@ -41,11 +41,14 @@ public:
         std::ifstream ifs(fileName, std::ios::binary);
         std::ofstream ofs(outFileName, std::ios::app | std::ios::binary);
 
+        memset(dataInitial, 'I', Block);
         ifs.read(data, Block);
         for (int i = 0; i < Block; i++)
         {
             cipherBlock[i] = data[i] ^ dataInitial[i];
         }
+        cipher(cipherBlock);
+
         ofs.write(cipherBlock, Block);
         memcpy(cipherBlockPre, cipherBlock, Block);
         do
