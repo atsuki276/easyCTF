@@ -1,5 +1,5 @@
 /**
- * ‹e’r‚³‚ñ‚Ì‚ð^Ž—‚½‚¾‚¯
+ * ‹e’n‚³‚ñ‚Ì‚ð^Ž—‚½‚¾‚¯
  */
 
 #include <iostream>
