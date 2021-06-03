@@ -8,7 +8,7 @@
 
 void cipher(char* dst) {
     char cipherBlockTemp[Block];
-    memset(cipherBlockTemp, 'S', Block);
+    memset(cipherBlockTemp, 12345, Block);
 
     for (int i = 0; i < Block; i++)
     {
