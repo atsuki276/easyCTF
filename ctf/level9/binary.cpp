@@ -1,6 +1,7 @@
 #include <string>
 #include <stdio.h>
 #include <iostream>
+#include <sstream>
 #include <fstream>
 
 int main()
@@ -22,9 +23,33 @@ int main()
 
     //サイズを出力
     std::cout << "size = " << size << "\n";
-    for (int i = 0; i < size; i++)
+    if (size >= 200)
     {
-        std::cout << data[i - 1] << " ";
+        std::cout << "サイズが大きすぎます\n";
+        return 0;
+    }
+    
+    for (int i = 1; i < size + 1; i++)
+    {
+        std::stringstream ss;
+        /*16進数文字列に変換する
+        　char型をASCIIではなく、数値で出力する場合は先頭に+を付ける*/
+        ss << std::hex << +data[i - 1];
+
+        std::string test = ss.str();
+        //符号付きであるか判定する
+        if (test.size() > 5)
+        {
+            //符号付きの場合fが付くため、fを削除する
+            std::string test = ss.str().erase(0, 6);
+            std::cout << test << " ";
+        }
+        else
+        {
+            //符号付きでない場合そのまま出力する
+            std::cout << ss.str() << " ";
+        }
+        //16バイト毎に改行する
         if ((i % 16) == 0)
         {
             std::cout << "\n";
