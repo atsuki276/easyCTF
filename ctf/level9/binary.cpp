@@ -23,7 +23,7 @@ int main()
 
     //サイズを出力
     std::cout << "size = " << size << "\n";
-    if (size >= 200)
+    if (size >= 30000)
     {
         std::cout << "サイズが大きすぎます\n";
         return 0;
