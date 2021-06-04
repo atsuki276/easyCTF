@@ -13,6 +13,7 @@ class Xor {
 private:
     std::string fileName;
     std::string outFileName;
+    int key;
     char data[Block];
     char dataInitial[Block];
     char cipherBlockPre[Block];
@@ -21,7 +22,7 @@ private:
     void cipher(char* dst) {
         char cipherBlockTemp[Block];
         //暗号鍵
-        memset(cipherBlockTemp, 12345, Block);
+        memset(cipherBlockTemp, key, Block);
 
         for (int i = 0; i < Block; i++)
         {
@@ -32,9 +33,10 @@ private:
 
 public:
     //コンストラクタ
-    Xor(std::string inFile, std::string outFile){
+    Xor(std::string inFile, std::string outFile, int _key){
         fileName = inFile;
         outFileName = outFile;
+        key = _key;
     }
 
     //XORで暗号化
