@@ -2,8 +2,7 @@
 #include <fstream>
 #include <string>
 #include <cstring>
-
-#define SIZE_OF_ARRAY(array) (sizeof(array)/sizeof(array[0]))
+#define BLOCK 1
 
 using namespace std;
 
@@ -31,9 +30,19 @@ int main()
         return -1;
     }
 
+    string outFile;
+    cout << "出力するファイル" << endl;
+    getline(cin, outFile);
+    ofstream ofs(outFile, ios::app | ios::binary);
+
     for (int i = 0; i < size; i += 3)
     {
+        char hexNum[] = {data[i], data[i + 1], '\0'};
+        cout << string(hexNum) << endl;
+        ofs.write(hexNum, size);
     }
     
+    ofs.close();
+    delete data;
     return 0;
 }
