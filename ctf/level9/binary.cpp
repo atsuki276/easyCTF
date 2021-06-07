@@ -1,3 +1,7 @@
+/*
+バイナリファイルを16進数で表示する
+*/
+
 #include <string>
 #include <stdio.h>
 #include <iostream>
