@@ -48,6 +48,7 @@
 		"unordered_map": "cpp",
 		"vector": "cpp",
 		"xhash": "cpp",
-		"iterator": "cpp"
+		"iterator": "cpp",
+		"array": "cpp"
 	}
 }
