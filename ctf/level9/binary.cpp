@@ -4,8 +4,6 @@
 #include <sstream>
 #include <fstream>
 
-#define F "output.txt"
-
 int main()
 {
     //ファイルをバイナリで読み込む
@@ -13,7 +11,6 @@ int main()
     std::cout << "ファイル名を入力\n";
     getline(std::cin, fileName);
     std::ifstream ifs(fileName, std::ios::binary);
-    std::ofstream outputfile(F);
 
     //読み込みサイズを調べる。
     ifs.seekg(0, std::ios::end);
@@ -59,9 +56,7 @@ int main()
         {
             std::cout << "\n";
         }
-        outputfile << ss.str();
     }
     std::cout << "\nEnd\n";
-    outputfile.close();
     delete data;
 }
