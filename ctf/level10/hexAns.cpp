@@ -33,13 +33,17 @@ int main()
     string outFile;
     cout << "出力するファイル" << endl;
     getline(cin, outFile);
-    ofstream ofs(outFile, ios::app | ios::binary);
+    ofstream ofs(outFile, ios::app | ios::binary | ios::in);
 
     for (int i = 0; i < size; i += 3)
     {
         char hexNum[] = {data[i], data[i + 1], '\0'};
-        cout << string(hexNum) << endl;
-        ofs.write(hexNum, size);
+        cout << string(hexNum) << " ";
+
+        //16進数変換
+        int tes = stoi(string(hexNum), nullptr, 16);
+        //バイナリに1バイトずつ記載
+        ofs.write(reinterpret_cast<char *>(&tes), BLOCK);
     }
     
     ofs.close();

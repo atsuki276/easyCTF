@@ -47,13 +47,13 @@ int main()
             //符号付きの場合fが付くため、fを削除する
             std::string test = ss.str().erase(0, 6);
             std::cout << test << " ";
-            outputfile << test;
+            //outputfile << test;
         }
         else
         {
             //符号付きでない場合そのまま出力する
             std::cout << ss.str() << " ";
-            outputfile << ss.str();
+            //outputfile << ss.str();
         }
         //16バイト毎に改行する
         if ((i % 16) == 0)
