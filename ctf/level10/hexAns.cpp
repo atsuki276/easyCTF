@@ -39,6 +39,8 @@ int main()
     {
         char hexNum[] = {data[i], data[i + 1], '\0'};
         cout << string(hexNum) << " ";
+        //16バイト毎に改行
+        if (((i + 1) % 16) == 0) std::cout << "\n";
 
         //16進数変換
         int tes = stoi(string(hexNum), nullptr, 16);
