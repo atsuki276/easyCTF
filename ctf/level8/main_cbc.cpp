@@ -1,6 +1,6 @@
 #include <iostream>
 #include <string>
-#include "cbc.h"
+#include "header_cbc.hpp"
 
 using namespace std;
 
