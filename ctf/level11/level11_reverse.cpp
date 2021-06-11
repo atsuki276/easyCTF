@@ -10,6 +10,7 @@ brokenFlag.jpg
 #include <iomanip>
 #include <sstream>
 #include <fstream>
+#include <algorithm>
 
 int main()
 {
@@ -41,12 +42,7 @@ int main()
 
     //サイズを出力する
     std::cout << "size = " << size << std::endl;
-
-    std::cout << std::hex << int(data[0]) << std::endl;
-    std::cout << std::hex << int(data[1]) << std::endl;
-    std::cout << std::hex << int(data[2]) << std::endl;
-    std::cout << std::hex << int(data[3]) << std::endl;
-
+    std::reverse(data, data + size);
     outputfile.write(data, size);
     std::cout << "End!" << std::endl;
     outputfile.close();

@@ -14,7 +14,7 @@ int main()
     ifstream ifs(inFile);
 
     //読み込みサイズを調べる。
-    ifs.seekg(0, std::ios::end);
+    ifs.seekg(0, ios::end);
     long long int size = ifs.tellg();
     ifs.seekg(0);
 
@@ -23,10 +23,10 @@ int main()
     ifs.read(data, size);
 
     //サイズを出力
-    std::cout << "size = " << size << "\n";
+    cout << "size = " << size << "\n";
     if (size >= 30000)
     {
-        std::cout << "サイズが大きすぎます\n";
+        cout << "サイズが大きすぎます\n";
         return -1;
     }
 
@@ -40,7 +40,7 @@ int main()
         char hexNum[] = {data[i], data[i + 1], '\0'};
         cout << string(hexNum) << " ";
         //16バイト毎に改行
-        if (((i + 1) % 16) == 0) std::cout << "\n";
+        if (((i + 1) % 16) == 0) cout << "\n";
 
         //16進数変換
         int tes = stoi(string(hexNum), nullptr, 16);
