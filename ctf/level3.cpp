@@ -10,20 +10,20 @@ using namespace std;
 
 int main()
 {
-	int obj;
-	char flag[] = "DHCTF{you_can_reiGaiSyori}";
-	cout << "—v‘f”‚ð“ü—Í‚µ‚Ä‚­‚¾‚³‚¢\n";
-	cin >> obj;
+    int obj;
+    char flag[] = "DHCTF{you_can_reiGaiSyori}";
+    cout << "—v‘f”‚ð“ü—Í‚µ‚Ä‚­‚¾‚³‚¢\n";
+    cin >> obj;
 
-	while (1) {
-		try {
-			double* a = new double[obj];
-			cout << "—v‘f‚ð" << obj << "ŒÂ¶¬";
-			return 0;
-		}
-		catch (bad_alloc) {
-			cout << flag;
-			return 1;
-		}
-	}
+    while (1) {
+        try {
+            double* a = new double[obj];
+            cout << "—v‘f‚ð" << obj << "ŒÂ¶¬";
+            return 0;
+        }
+        catch (bad_alloc) {
+            cout << flag;
+            return 1;
+        }
+    }
 }
