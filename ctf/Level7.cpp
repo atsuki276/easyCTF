@@ -11,17 +11,13 @@ XORの問題
 using std::cout; using std::cin; using std::string;
 using std::vector; using std::endl; using std::copy;
 
-int main() {
+int main(int argc, char const *argv[]) {
     
     //暗号化したいフラグ
-    string flag;
-    cout << "フラグを入力\n";
-    cin >> flag;
+    string flag = argv[1];
 
     //暗号鍵の入力
-    int key(0);
-    cout << "暗号鍵を入力\n";
-    cin >> key;
+    int key = std::stoi(argv[2]);
 
     vector<char> asciiFlag(flag.begin(), flag.end());
 
@@ -45,5 +41,4 @@ int main() {
     cout << "\nFLAG XOR LOCK: ";
     copy(asciiFlag.begin(), asciiFlag.end(), std::ostream_iterator<char> (cout, ""));
 
-    return EXIT_SUCCESS;
 }

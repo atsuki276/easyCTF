@@ -1,28 +1,43 @@
-#include <ctime>
-#include <cstdlib>
 #include <iostream>
 
-using namespace std;
+class A 
+{
+private:
+    int value = -1;
+
+public:
+    void set_value(int value);
+    int get_value() const;
+    int get_value2() const;
+};
+
+void A::set_value(int value)
+{
+    this->value = value;
+}
+
+int A::get_value() const
+{
+    return value;
+}
+
+int A::get_value2() const
+{
+    return -(this->get_value());
+}
+
+int call_cl(A* pa)
+{
+    return pa->get_value() * 10;
+}
 
 int main()
 {
-	srand(time(NULL));
+    A a;
 
-	int no = rand() % 100;
-	int x;
+    a.set_value(5);
+    std::cout << a.get_value() << std::endl;
+    std::cout << a.get_value2() << std::endl;
 
-	cout << "”“–‚ÄƒQ[ƒ€\n";
-	cout << "0~99‚Ì”‚ð“ü—Í‚µ‚Ä‚­‚¾‚³‚¢\n";
-
-	do {
-		cin >> x;
-
-		if(x > no) {
-			cout << "‚à‚Á‚Æ¬‚³‚È”‚Å‚·";
-		} else if(x < no) {
-			cout << "‚à‚Á‚Æ‘å‚«‚È”‚Å‚·";
-		}
-	} while (x != no);
-
-	cout << "³‰ð‚Å‚·";
+    std::cout << call_cl(&a) << std::endl;
 }
