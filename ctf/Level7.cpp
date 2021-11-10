@@ -12,6 +12,13 @@ using std::cout; using std::cin; using std::string;
 using std::vector; using std::endl; using std::copy;
 
 int main(int argc, char const *argv[]) {
+
+    if (argv[1] == NULL || argv[2] == NULL)
+    {
+        std::cout << "フラグ、または暗号鍵が入力されていないです。";
+        return 0;
+    }
+    
     
     //暗号化したいフラグ
     string flag = argv[1];
